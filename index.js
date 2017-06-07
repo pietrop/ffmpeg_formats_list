@@ -1,14 +1,15 @@
 'use strict';
 var fs = require('fs');
 var cp = require('child_process');
+var ffmpegListOfFormats = require("./ffmpeg_extentions.js")
 
 var command = null; 
 
-function setffmpegPath(ffmpegPath){
+function setFfmpegPath(ffmpegPath){
 	command = ffmpegPath;
 }
 
-function getffmpegPath(){
+function getFfmpegPath(){
 	return command;
 }
 
@@ -17,9 +18,9 @@ function updatedListOfFfmpegFormats(){
 	var formatExtensionsReultsList = []
 
 	//set default 
-	if(command == null){
+	if(command === null){
 		command = 'ffmpeg';
-	};	
+	}	
 
 	var args = ['-formats'];
 
@@ -78,7 +79,7 @@ function updatedListOfFfmpegFormats(){
 	// show preview 
 	// console.log(formatExtensionsReultsList)
 	//save json, array of list 
-	fs.writeFileSync('ffmpeg_extentions.json', JSON.stringify(formatExtensionsReultsList))
+	// fs.writeFileSync('ffmpeg_extentions.json', JSON.stringify(formatExtensionsReultsList))
 
 
 	return formatExtensionsReultsList;
@@ -87,12 +88,10 @@ function updatedListOfFfmpegFormats(){
 
 
 module.exports = {
-    listOfFormats: require('./ffmpeg_extentions.json'),
-    updatedListOFFormats: updatedListOfFfmpegFormats,
-    setffmpegPath: function(ffmpegPath){
-    	setffmpegPath(ffmpegPath)
-    },
+    listOfFormats: ffmpegListOfFormats,
+    updatedListOfFormats: updatedListOfFfmpegFormats,
+    setFfmpegPath: (ffmpegPath) => setFfmpegPath(ffmpegPath),
     //added only for testing porpuses 
-    returnffmpegPath: getffmpegPath
+    returnFfmpegPath: getFfmpegPath
 }
 

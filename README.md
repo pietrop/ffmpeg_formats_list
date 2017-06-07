@@ -6,7 +6,7 @@ A modules that gives you a list of ffmpeg file formats.
 
 For when youy need a list of file formats supported by `ffmpeg`. possibly as an array. 
 
-For instance if you are working on an AV project (eg like [autoEdit](www.autoEdit.io)) where you are using `ffmpeg` and want to take advantage of the wide variery of file types it supports, but you also want to implement file type validations. 
+For instance if you are working on an AV project (eg like [autoEdit](http://www.autoEdit.io)) where you are using `ffmpeg` and want to take advantage of the wide variery of file types it supports, but you also want to implement file type validations. 
 
 This script generates a list that can be used for this purpose. 
 
@@ -14,7 +14,7 @@ This script generates a list that can be used for this purpose.
 
 ### Ready to use list
 
-To use the array list in your project the simplest way is to [get/copy and paste the ready made list from `ffmpeg_extensions.json`](ffmpeg_extentions.json).
+To use the array list in your project the simplest way is to [get/copy and paste the ready made list from `ffmpeg_extensions.js`](ffmpeg_extentions.json).
 
 ### To make your own list
 
@@ -24,7 +24,7 @@ If you have different version of ffmpeg, [from what you see in the example file]
 npm start
 ```
 
-[The list is now up to date and you can find it here `ffmpeg_extensions.json`](ffmpeg_extentions.json)
+[The list is now up to date and you can find it here `ffmpeg_extensions.js`](ffmpeg_extentions.json)
 
 ### To use it as module in your project
 
