@@ -2,11 +2,25 @@
 var fs = require("fs");
 var cp = require('child_process');
 
+var command = null; 
+
+function setffmpegPath(ffmpegPath){
+	command = ffmpegPath;
+}
+
+function getffmpegPath(){
+	return command;
+}
+
 function updatedListOfFfmpegFormats(){
 
 	var formatExtensionsReultsList = []
 
-	var command = 'ffmpeg';
+	//set default 
+	if(command == null){
+		command = 'ffmpeg';
+	};	
+
 	var args = ['-formats'];
 
 	// for ease of use it creates a new process in a syncronous way 
@@ -30,7 +44,7 @@ function updatedListOfFfmpegFormats(){
 	linesListOfFormats = linesListOfFormats.filter(Boolean)
 
 	//feedback on number of lines identified
-	console.log("Number of formats in list",linesListOfFormats.length);
+	// console.log("Number of formats in list",linesListOfFormats.length);
 
 	// iterate over the lines of formats 
 	linesListOfFormats.forEach(iterateOverLinesListFormats);
@@ -60,13 +74,13 @@ function updatedListOfFfmpegFormats(){
 
 
 	//resulting list count
-	console.log("number of formats identified", formatExtensionsReultsList.length)
+	// console.log("number of formats identified", formatExtensionsReultsList.length)
 	// show preview 
 	// console.log(formatExtensionsReultsList)
 	//save json, array of list 
 	fs.writeFileSync("ffmpeg_extentions.json", JSON.stringify(formatExtensionsReultsList))
 
-	
+
 	return formatExtensionsReultsList;
 	
 }
@@ -74,6 +88,11 @@ function updatedListOfFfmpegFormats(){
 
 module.exports = {
     listOfFormats: require("./ffmpeg_extentions.json"),
-    updatedListOFFormats: updatedListOfFfmpegFormats
+    updatedListOFFormats: updatedListOfFfmpegFormats,
+    setffmpegPath: function(ffmpegPath){
+    	setffmpegPath(ffmpegPath)
+    },
+    //added only for testing porpuses 
+    returnffmpegPath: getffmpegPath
 }
 
