@@ -10,7 +10,7 @@ This script generates a list that can be used for this purpose.
 
 ### To use the array list in your project
 
-Either just [get the ready made list from `ffmpeg_extensions.json`](ffmpeg_extensions.json)
+Either just [get the ready made list from `ffmpeg_extensions.json`](ffmpeg_extentions.json)
 
 ### To make your own list
 
@@ -18,7 +18,7 @@ Either just [get the ready made list from `ffmpeg_extensions.json`](ffmpeg_exten
 npm start
 ```
 
-[The list is now up to date and you can find it here `ffmpeg_extensions.json`](ffmpeg_extensions.json)
+[The list is now up to date and you can find it here `ffmpeg_extensions.json`](ffmpeg_extentions.json)
 
 ### To use a module in your project
 
