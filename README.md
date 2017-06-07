@@ -116,7 +116,7 @@ Pretty basic test coverage for now, but it's a start.
 
 ## Contributing 
 
-Feel free to fork, make sudgestions, raise an issue etc..
+Feel free to fork, make suggestions, raise an issue etc..
 
 ## Contributor 
 
