@@ -99,6 +99,10 @@ to verify it has all gone smoothly.
 Using jasmine for testing. To run tests.
 
 ```
+npm install
+```
+
+```
 npm test
 ```
 
