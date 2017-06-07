@@ -16,7 +16,7 @@ function getffmpegPath(){
 function updatedListOfFfmpegFormats(optionalListOfFormats){
 	var formatExtensionsReultsList = [];
 	
-	if (typepf optionalListOfFormats === 'undefined') { 
+	if (typeof optionalListOfFormats === 'undefined') { 
 		optionalListOfFormats = listOfFormatsFile;
  	}
 	
