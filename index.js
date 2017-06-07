@@ -1,6 +1,5 @@
 'use strict';
 
-const fs = require('fs');
 const cp = require('child_process');
 var ffmpegListOfFormats = require("./ffmpeg_extentions.js");
 

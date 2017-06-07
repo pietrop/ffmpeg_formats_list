@@ -112,6 +112,7 @@ Pretty basic test coverage for now, but it's a start.
 ## TODO
  
 - [ ] for audio/video validation use, remove subtitle formats from your list, eg `vtt`, `srt` etc... [here is a list](https://www.ffmpeg.org/general.html#Subtitle-Formats)
+- [ ] `mkv` seems to be missing from the lsit. because it appears as `mkvtimestamp_v2`.
 
 
 ## Contributing 
