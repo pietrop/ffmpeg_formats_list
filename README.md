@@ -1,8 +1,8 @@
 # Parsing ffmpeg extensions to get a file list
 
-## motivation 
+## Motivation 
 
-Let's say you are working on a AV project (eg like [autoEdit](www.autoEdit.io)) where you are using `ffmpeg` and want to take advantage of the wide variery of file types it supports, but you also want to implement file type validations. So you need a list of formats supported by `ffmpeg`. possibly as an array. 
+When you are working on a AV project (eg like [autoEdit](www.autoEdit.io)) where you are using `ffmpeg` and want to take advantage of the wide variery of file types it supports, but you also want to implement file type validations. So you need a list of formats supported by `ffmpeg`. possibly as an array. 
 
 This script generates a list that can be used for this purpose. 
 
