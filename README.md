@@ -4,13 +4,13 @@
 
 Let's say you are working on a AV project (eg like [autoEdit](www.autoEdit.io)) where you are using `ffmpeg` and want to take advantage of the wide variery of file types it supports, but you also want to implement file type validations. So you need a list of formats supported by `ffmpeg`. possibly as an array. 
 
-This script generates a list (array) that can be used for this purpose. 
+This script generates a list that can be used for this purpose. 
 
-## usage
+## Usage
 
 ### To use the array list in your project
 
-Either just [get the ready made list from `ffmpeg_extensions.json`](./ffmpeg_extensions.json)
+Either just [get the ready made list from `ffmpeg_extensions.json`](ffmpeg_extensions.json)
 
 ### To make your own list
 
@@ -18,7 +18,7 @@ Either just [get the ready made list from `ffmpeg_extensions.json`](./ffmpeg_ext
 npm start
 ```
 
-[The list is now up to date and you can find it here `ffmpeg_extensions.json`](./ffmpeg_extensions.json)
+[The list is now up to date and you can find it here `ffmpeg_extensions.json`](ffmpeg_extensions.json)
 
 ### To use a module in your project
 
@@ -27,7 +27,6 @@ To integrate into
 ```
 npm install
 ```
-
 
 ## Prerequisits to generate your own lsit
 If you are not using the example list but want to make your own, you'll need ffmpeg installed on the machine. 
@@ -55,10 +54,10 @@ var updatedList = ffmpegFormatsListMaker.updatedListOFFormats()
 ```
 
 
-
 ## TODO
  
 - [ ] for audio/video use remove subtitle formats from yoru list, eg `vtt`, `srt` etc... 
+
 
 ## Contributing 
 
