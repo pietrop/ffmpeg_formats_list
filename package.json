@@ -2,7 +2,7 @@
   "name": "ffmpeg_formats_list",
   "version": "1.0.0",
   "description": "A script to generate an array list of ffmpeg supported file formats",
-  "main": "parse_ffmpeg_extensions.js",
+  "main": "index.js",
   "scripts": {
     "test": "jasmine",
     "start": "node index.js"
