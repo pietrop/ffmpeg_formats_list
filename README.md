@@ -4,9 +4,9 @@ A modules that gives you a list of ffmpeg file formats.
 
 ## Motivation 
 
-For when youy need a list of formats supported by `ffmpeg`. possibly as an array. 
+For when youy need a list of file formats supported by `ffmpeg`. possibly as an array. 
 
-For instance if you are working on an AV project (eg like [autoEdit](www.autoEdit.io)) where you are using `ffmpeg` and want to take advantage of the wide variery of file types it supports, but you also want to implement file type validations. So 
+For instance if you are working on an AV project (eg like [autoEdit](www.autoEdit.io)) where you are using `ffmpeg` and want to take advantage of the wide variery of file types it supports, but you also want to implement file type validations. 
 
 This script generates a list that can be used for this purpose. 
 
