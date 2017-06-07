@@ -1,6 +1,7 @@
 'use strict';
-var fs = require('fs');
-var cp = require('child_process');
+const fs = require('fs');
+const cp = require('child_process');
+const listOfFormatsFile = require('./ffmpeg_extentions.json');
 
 var command = null; 
 
@@ -12,12 +13,15 @@ function getffmpegPath(){
 	return command;
 }
 
-function updatedListOfFfmpegFormats(){
-
-	var formatExtensionsReultsList = []
-
+function updatedListOfFfmpegFormats(optionalListOfFormats){
+	var formatExtensionsReultsList = [];
+	
+	if (typeof optionalListOfFormats === 'undefined') { 
+		optionalListOfFormats = listOfFormatsFile;
+ 	}
+	
 	//set default 
-	if(command == null){
+	if(command === null){
 		command = 'ffmpeg';
 	};	
 
@@ -57,14 +61,14 @@ function updatedListOfFfmpegFormats(){
 		//// [ '', 'DE', '', 'yuv4mpegpipe', '', '', 'YUV4MPEG', 'pipe' ]
 		var extension = itemArray[3];
 		// if meets validation add to list 
-		if(extension !== '' &&  extension !== undefined){
+		if (extension !== '' &&  extension !== undefined){
 			formatExtensionsReultsList.push(extension);
 			// however spacing is a bit of sometimes, so in that case extension is in second element
 			// eg 
 			// [ '','DE',  'wtv',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  'Windows',  'Television','(WTV)' ]
-		}else if(extension === '' ){
+		} else if (extension === '' ) {
 			 extension = itemArray[2];
-			 if(extension !== '' &&  extension !== undefined){
+			 if (extension !== '' &&  extension !== undefined) {
 			 		formatExtensionsReultsList.push(extension);
 			 }
 		}
@@ -87,11 +91,8 @@ function updatedListOfFfmpegFormats(){
 
 
 module.exports = {
-    listOfFormats: require('./ffmpeg_extentions.json'),
-    updatedListOFFormats: updatedListOfFfmpegFormats,
-    setffmpegPath: function(ffmpegPath){
-    	setffmpegPath(ffmpegPath)
-    },
+    updatedListOFFormats: (listOfFormats) => updatedListOfFfmpegFormats(listOfFormats),
+    setffmpegPath: (ffmpegPath) => setffmpegPath(ffmpegPath),
     //added only for testing porpuses 
     returnffmpegPath: getffmpegPath
 }
