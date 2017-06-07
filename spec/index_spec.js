@@ -3,6 +3,9 @@
 var ffmpegFormatsListMaker = require('../index.js');
 var defaultListOfFormats = require("../ffmpeg_extentions.js");
 // var defaultListOfFormats = require("../ffmpeg_extentions.js");
+// 
+
+
 
 //exampel paths for ffmpeg testing
 var examplePath = '/usr/local/bin/ffmpeg';
@@ -11,7 +14,7 @@ var wrongExamplePath = '/some/random/made/up/path'
 describe('ffmpeg format list module', function() {
 
 	it('should return a list of ffmpeg formats', function() {
-		expect(ffmpegFormatsListMaker.listOfFormats).toEqual(defaultListOfFormats);
+		expect(ffmpegFormatsListMaker.defaultListOfFormats).toEqual(defaultListOfFormats);
 	});
 
 	it('should return an updated list of ffmpeg formats', function() {

@@ -1,7 +1,16 @@
 'use strict';
-var fs = require('fs');
-var cp = require('child_process');
-var ffmpegListOfFormats = require("./ffmpeg_extentions.js")
+
+const fs = require('fs');
+const cp = require('child_process');
+var ffmpegListOfFormats = require("./ffmpeg_extentions.js");
+
+// console.log(ffmpegListOfFormats);
+// 
+function getDefaultListOfFormats(){
+	return ffmpegListOfFormats;
+}
+
+
 
 var command = null; 
 
@@ -14,8 +23,8 @@ function getFfmpegPath(){
 }
 
 function updatedListOfFfmpegFormats(){
-
-	var formatExtensionsReultsList = []
+	var formatExtensionsReultsList = [];
+	
 
 	//set default 
 	if(command === null){
@@ -58,29 +67,19 @@ function updatedListOfFfmpegFormats(){
 		//// [ '', 'DE', '', 'yuv4mpegpipe', '', '', 'YUV4MPEG', 'pipe' ]
 		var extension = itemArray[3];
 		// if meets validation add to list 
-		if(extension !== '' &&  extension !== undefined){
+		if (extension !== '' &&  extension !== undefined){
 			formatExtensionsReultsList.push(extension);
 			// however spacing is a bit of sometimes, so in that case extension is in second element
 			// eg 
 			// [ '','DE',  'wtv',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  '',  'Windows',  'Television','(WTV)' ]
-		}else if(extension === '' ){
+		} else if (extension === '' ) {
 			 extension = itemArray[2];
-			 if(extension !== '' &&  extension !== undefined){
+			 if (extension !== '' &&  extension !== undefined) {
 			 		formatExtensionsReultsList.push(extension);
 			 }
 		}
 		
 	}
-
-
-
-	//resulting list count
-	// console.log('number of formats identified', formatExtensionsReultsList.length)
-	// show preview 
-	// console.log(formatExtensionsReultsList)
-	//save json, array of list 
-	// fs.writeFileSync('ffmpeg_extentions.json', JSON.stringify(formatExtensionsReultsList))
-
 
 	return formatExtensionsReultsList;
 	
@@ -88,8 +87,8 @@ function updatedListOfFfmpegFormats(){
 
 
 module.exports = {
-    listOfFormats: ffmpegListOfFormats,
-    updatedListOfFormats: updatedListOfFfmpegFormats,
+	defaultListOfFormats: getDefaultListOfFormats(),
+    updatedListOfFormats: () => updatedListOfFfmpegFormats(),
     setFfmpegPath: (ffmpegPath) => setFfmpegPath(ffmpegPath),
     //added only for testing porpuses 
     returnFfmpegPath: getFfmpegPath
