@@ -1,0 +1,15 @@
+{
+  "name": "ffmpeg_formats_list",
+  "version": "1.0.0",
+  "description": "A script to generate an array list of ffmpeg supported file formats",
+  "main": "parse_ffmpeg_extensions.js",
+  "scripts": {
+    "test": "jasmine",
+    "start": "node index.js"
+  },
+  "author": "Pietro Passarelli <pietro.passarelli@gmail.com> (http://pietropassarelli.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.6.0"
+  }
+}
