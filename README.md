@@ -43,10 +43,10 @@ Then you can do  either of these
 var ffmpegFormatsListMaker = require("../index.js");
 
 // returns the default list
-var defaultList = ffmpegFormatsListMaker.listOfFormats;
+var defaultList = ffmpegFormatsListMaker.defaultListOfFormats;
 
 //or you can run the module returns an updated list matching the ffmpeg formats specs of your system
-var updatedList = ffmpegFormatsListMaker.updatedListOFFormats()
+var updatedList = ffmpegFormatsListMaker.updatedListOfFormats()
 ```
 
 optionally you can provide you own path to `ffmpeg` binary, eg for use case like working in nwjs or electron. This should work well with moduels such as[`ffmpeg-static`](https://github.com/eugeneware/ffmpeg-static)
@@ -58,7 +58,7 @@ var ffmpegFormatsListMaker = require("../index.js");
 ffmpegFormatsListMaker.setffmpegPath(examplePath);
 
 //runs the module returns an updated list matching the ffmpeg formats specs of your system
-var updatedList = ffmpegFormatsListMaker.updatedListOFFormats()
+var updatedList = ffmpegFormatsListMaker.updatedListOfFormats()
 ```
 
 
